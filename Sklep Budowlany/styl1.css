@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.banner {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding: 60px 100px;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+}
+.logo span {
+color: yellow;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 40%;
+}
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+}
+.search-bar button {
+    background-color: yellow;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+}
+.menu {
+    display: flex;
+    gap: 15px;
+    color: white;
+    align-items: center;
+}
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 10;
+}
+.menu-item:hover .submenu {
+    display: block;
+}
+.submenu p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.submenu span {
+    font-weight: bold;
+    color: yellow;
+}
+.cart {
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.kategorie {
+    width: 25%;
+    height: 50px;
+    background-color: red;
+    float: left;
+    padding: 15px 15px;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+.navbar {
+    width: 50%;
+    height: 50px;
+    background-color: green;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.darmowadostawa {
+    width: 25%;
+    height: 50px;
+    background-color: blue;
+    float: left;
+    justify-content: center;
+    padding: 15px 15px;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+.kategorie, .navbar, .darmowadostawa {
+    text-align: center;
+}
+.marki, .promocje, .kontakt{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 15px 15px;
+    width: 33%;
+}
+.menu-item a, .cart a {
+    text-decoration: none;
+    color: inherit;
+}
+.kategorie {
+    cursor: pointer;
+    padding: 10px;
+    background: #d32f2f;
+    color: white;
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.kategorie-menu {
+    display: block;
+    position: absolute;
+    background: #ffebee;
+    border: 1px solid #ccc;
+    padding: 0;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    width: 400px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.kategorie-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ffccbc;
+    text-align: center;
+}
+.kategorie-menu li a {
+    text-decoration: none;
+    color: #d32f2f;
+    font-weight: bold;
+}
+.kategorie-menu li:hover {
+    background: #ffcdd2;
+}
+.kategorie-menu.open {
+    max-height: 300px;
+}
+.footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.discount {
+    color: yellow;
+    font-weight: bold;
+}
+
+.btn-more {
+    background: yellow;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.footer-section h4 {
+    color: yellow;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.main-content {
+    flex: 1;
+}
+.footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    font-size: 14px;
+    margin-top: auto;
+}
+.produkty {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.produkt {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.produkt img {
+    width: 100%;
+    height: 400px;
+    object-fit: scale-down;
+    border-radius: 8px;
+}
+.produkt h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.produkt .cena {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+.produkt .dodaj-do-koszyka {
+    background-color: #4444ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.produkt .dodaj-do-koszyka:hover {
+    background-color: #3333cc; 
+}
+#koszyk-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.koszyk-produkt {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.koszyk-produkt img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.koszyk-produkt h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.koszyk-produkt .cena {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.koszyk-produkt button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.koszyk-produkt button:hover {
+    background-color: #cc0000;
+}
+
+.koszyk-podsumowanie {
+    text-align: right;
+    padding: 20px;
+    font-size: 18px;
+}
+
+#przejdz-do-platnosci {
+    background-color: #4444ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#przejdz-do-platnosci:hover {
+    background-color: #3333cc;
+}
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
