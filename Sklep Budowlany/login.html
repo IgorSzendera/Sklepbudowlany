@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-<head>
-    <meta charset="utf-8">
-    <title>Logowanie - Sklep Budowlany</title>
-    <script src="js/menu.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Logowanie - Sklep Budowlany</title>
+        <link rel="stylesheet" type="text/css" href="styl1.css">
+        <script src="js/menu.js"></script>
+        <script src="js/koszyk.js"></script>
+    </head>
 <body>
-    <link rel="stylesheet" type="text/css" href="styl1.css">
     <div class="banner">
         <div class="logo"><a href="index.html">x<span>SPRZET.</span></div></a>
         <div class="search-bar">
@@ -46,7 +48,49 @@
         <div class="darmowadostawa">Do darmowej dostawy brakuje: </div>
     </div>
     
-    <div class="main-content"></div>
+    <div class="main-content">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <input type="radio" name="tab" id="login-tab" checked>
+                <input type="radio" name="tab" id="register-tab">
+                
+                <div class="tab-switcher">
+                    <label for="login-tab" class="login-tab">Logowanie</label>
+                    <label for="register-tab" class="register-tab">Rejestracja</label>
+                </div>
+
+                <div class="auth-forms">
+                    <form class="login-form" onsubmit="handleAuth(event, 'Zalogowano pomyślnie!')">
+                        <div class="form-group">
+                            <label for="email">Adres e-mail:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Hasło (min. 8 znaków):</label>
+                            <input type="password" id="password" name="password" minlength="8" required>
+                        </div>
+                        <button type="submit">Zaloguj się</button>
+                    </form>
+
+                    <form class="register-form" onsubmit="handleAuth(event, 'Konto zostało utworzone!')">
+                        <div class="form-group">
+                            <label for="reg-email">Adres e-mail:</label>
+                            <input type="email" id="reg-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Hasło (min. 8 znaków):</label>
+                            <input type="password" id="reg-password" name="password" minlength="8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Powtórz hasło:</label>
+                            <input type="password" id="confirm-password" name="confirm-password" minlength="8" required>
+                        </div>
+                        <button type="submit">Zarejestruj się</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <footer class="footer">
         <div class="newsletter">
@@ -105,6 +149,34 @@
             <p>Dział handlowy: pon. - pt. 08:00 - 18:00</p>
         </div>
     </footer>
+
+    <script>
+        function handleAuth(event, message) {
+            event.preventDefault();
+            
+            if (event.target.classList.contains('register-form')) {
+                const password = document.getElementById('reg-password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+                
+                // Walidacja haseł
+                if (password !== confirmPassword) {
+                    alert('Hasła nie są identyczne!');
+                    return;
+                }
+            }
+    
+            const passwordInput = event.target.querySelector('input[type="password"]');
+            if (passwordInput.value.length < 8) {
+                alert('Hasło musi mieć co najmniej 8 znaków!');
+                return;
+            }
+    
+            // Jeśli walidacja przebiegła pomyślnie
+            alert(message);
+            event.target.reset();
+        }
+    </script>
+
 </body>
 </html>
 

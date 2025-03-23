@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Magazyn - Sklep Budowlany</title>
-    <link rel="stylesheet" type="text/css" href="styl1.css">
-    <script src="js/menu.js"></script>
-    <script src="koszyk.js"></script>
-</head>
-<body>
-    <link rel="stylesheet" type="text/css" href="styl1.css">
-</head>
+<html lang="pl-PL">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magazyn - Sklep Budowlany</title>
+        <link rel="stylesheet" type="text/css" href="styl1.css">
+        <script src="js/menu.js"></script>
+        <script src="js/koszyk.js"></script>
+    </head>
 <body>
     <div class="banner">
-        <div class="logo"><a href="index.html">x<span>SPRZET.</span></div></a>
+        <div class="logo"><a href="index.html">x<span>SPRZET.</span></a></div>
         <div class="search-bar">
             <input type="text" placeholder="Wpisz szukaną frazę np. nazwa, symbol, EAN...">
             <button>🔍</button>
@@ -27,7 +26,7 @@
             <div class="menu-item"><a href="schowek.html">📦 Magazyn</a></div>
             <div class="menu-item"><a href="login.html">🔒 Zaloguj / Zarejestruj</a></div>
         </div>
-        <div class="cart"><a href="koszyk.html">🛒 0</a></div>
+        <div class="cart"><a href="koszyk.html">🛒 <span id="koszyk-licznik">0</span></a></div>
     </div>
     
     <div class="nav">
@@ -49,8 +48,9 @@
         <div class="darmowadostawa">Do darmowej dostawy brakuje: </div>
     </div>
     
-
-    <h1>Magazyn</h1>
+    <div class="main-content">
+        <h1>Magazyn</h1>
+        <div class="table-container">
     <table>
         <thead>
             <tr>
@@ -189,7 +189,7 @@
                 <td>931,86 PLN</td>
                 <td>23%</td>
             </tr>
-            AKCESORIA
+            <th>AKCESORIA</th>
             <tr>
                 <td>Zszywki (karton) do wiązarki</td>
                 <td>SA23433</td>
@@ -315,10 +315,6 @@
 
         </tbody>
     </table>
-</body>
-</html>
-    </div>
-    
     <footer class="footer">
         <div class="newsletter">
             <div class="newsletter-content">

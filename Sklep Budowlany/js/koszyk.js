@@ -1,9 +1,14 @@
 // koszyk.js
 
 // Funkcja globalna dodająca produkt do koszyka
-window.dodajDoKoszyka = function(nazwa, cena, zdjecie) {
+window.dodajDoKoszyka = function(nazwa, cena, zdjecie, kategoria) {
     const koszyk = JSON.parse(localStorage.getItem("koszyk")) || [];
-    koszyk.push({ nazwa, cena, zdjecie });
+    koszyk.push({ 
+        nazwa, 
+        cena, 
+        zdjecie,
+        kategoria
+    });
     localStorage.setItem("koszyk", JSON.stringify(koszyk));
 
     // Aktualizuj licznik w koszyku (jeśli istnieje)
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const produktElement = document.createElement("div");
                 produktElement.className = "koszyk-produkt";
                 produktElement.innerHTML = `
-                    <img src="zdjecia/budownictwo/${produkt.zdjecie}" alt="${produkt.nazwa}" class="auto-zdjecie">
+                    <img src="zdjecia/${produkt.kategoria}/${produkt.zdjecie}" alt="${produkt.nazwa}" class="auto-zdjecie">
                     <h3>${produkt.nazwa}</h3>
                     <p class="cena">Cena: ${produkt.cena} zł</p>
                     <button onclick="usunZKoszyka(${index})">🗑️ Usuń</button>
@@ -52,6 +57,29 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("koszyk", JSON.stringify(koszyk));
             wyswietlKoszyk();
         };
+
+        // Obsługa przycisku "Przejdź do płatności"
+        document.getElementById("przejdz-do-platnosci").addEventListener("click", function() {
+            document.getElementById("zamowienieForm").style.display = "block";
+        });
+
+        // Obsługa formularza zamówienia
+        document.getElementById("zamowienieForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Zapobiega domyślnej akcji wysłania formularza
+
+            // Wyświetlenie alertu potwierdzającego
+            alert("Zamówienie zostało złożone! Dziękujemy za zakupy.");
+
+            // Czyszczenie koszyka
+            localStorage.removeItem("koszyk");
+            wyswietlKoszyk();
+
+            // Czyszczenie formularza
+            document.getElementById("zamowienieForm").reset();
+
+            // Ukrycie formularza po złożeniu zamówienia
+            document.getElementById("zamowienieForm").style.display = "none";
+        });
 
         wyswietlKoszyk();
     }

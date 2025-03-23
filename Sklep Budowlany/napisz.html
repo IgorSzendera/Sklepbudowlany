@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-<head>
-    <meta charset="utf-8">
-    <title>Napisz - Sklep Budowlany</title>
-    <script src="js/menu.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kontakt - Sklep Budowlany</title>
+        <link rel="stylesheet" type="text/css" href="styl1.css">
+        <script src="js/menu.js"></script>
+        <script src="js/koszyk.js"></script>
+    </head>
 <body>
-    <link rel="stylesheet" type="text/css" href="styl1.css">
     <div class="banner">
         <div class="logo"><a href="index.html">x<span>SPRZET.</span></div></a>
         <div class="search-bar">
@@ -46,7 +48,30 @@
         <div class="darmowadostawa">Do darmowej dostawy brakuje: </div>
     </div>
     
-    <div class="main-content"></div>
+    <div class="main-content">
+        <h1>Formularz kontaktowy</h1>
+        <form id="contactForm" action="#" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Adres e-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Temat:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Wyślij</button>
+            </div>
+        </form>
+    </div>
     
     <footer class="footer">
         <div class="newsletter">
@@ -105,6 +130,18 @@
             <p>Dział handlowy: pon. - pt. 08:00 - 18:00</p>
         </div>
     </footer>
+
+    <script>
+        // Obsługa formularza
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Zapobiega domyślnej akcji wysłania formularza
+
+            // Wyświetlenie alertu
+            alert('Wiadomość została wysłana! Dziękujemy za kontakt.');
+
+            // Opcjonalnie: wyczyść formularz po wysłaniu
+            document.getElementById('contactForm').reset();
+        });
+    </script>
 </body>
 </html>
-

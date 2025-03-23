@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-<head>
-    <meta charset="utf-8">
-    <title>Sklep Budowlany</title>
-    <script src="js/menu.js"></script>
-    <script src="koszyk.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sklep Budowlany</title>
+        <link rel="stylesheet" type="text/css" href="styl1.css">
+        <script src="js/menu.js"></script>
+        <script src="js/koszyk.js"></script>
+    </head>
 <body>
-    <link rel="stylesheet" type="text/css" href="styl1.css">
     <div class="banner">
-        <div class="logo"><a href="index.html">x<span>SPRZET.</span></div></a>
+        <div class="logo"><a href="index.html">x<span>SPRZET.</span></a></div>
         <div class="search-bar">
             <input type="text" placeholder="Wpisz szukaną frazę np. nazwa, symbol, EAN...">
             <button>🔍</button>
@@ -47,7 +48,64 @@
         <div class="darmowadostawa">Do darmowej dostawy brakuje: </div>
     </div>
     
-    <div class="main-content"></div>
+    <div class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Witamy w Sklepie Budowlanym xSPRZET!</h1>
+                <p>Najlepsze narzędzia, materiały i akcesoria budowlane w jednym miejscu.</p>
+                <a href="#promocje" class="btn-hero">Sprawdź promocje</a>
+            </div>
+        </section>
+
+        <section id="promocja" class="promocja">
+            <h2>Promocje</h2>
+            <div class="produkty">
+                <div class="produkt">
+                    <img src="zdjecia/budownictwo/produkt1.jpg" alt="Zagęszczarka stopowa">
+                    <h3>Zagęszczarka stopowa</h3>
+                    <p class="cena">Cena: <span class="stara-cena">17 118,73 PLN</span> 15 000,00 PLN</p>
+                    <button class="dodaj-do-koszyka" onclick="dodajDoKoszyka('Zagęszczarka stopowa', 15000, 'produkt1.jpg', 'budownictwo')">Dodaj do koszyka</button>
+                </div>
+                <div class="produkt">
+                    <img src="zdjecia/elektronarzedzia/produkt3.jpg" alt="Młotowiertarka wielofunkcyjna">
+                    <h3>Młotowiertarka wielofunkcyjna</h3>
+                    <p class="cena">Cena: <span class="stara-cena">4 643,00 PLN</span> 4500, 00 PLN</p>
+                    <button class="dodaj-do-koszyka" onclick="dodajDoKoszyka('Młotowiertarka wielofunkcyjna', 4500.00, 'produkt3.jpg', 'elektronarzedzia')">Dodaj do koszyka</button>
+                </div>
+                <div class="produkt">
+                    <img src="zdjecia/przemysl/produkt1.jpg" alt="Agregat prądotwórczy trójfazowy">
+                    <h3>Agregat prądotwórczy trójfazowy</h3>
+                    <p class="cena">Cena: <span class="stara cena">8 912,78 PLN</span> 8 000,00 PLN</p>
+                    <button class="dodaj-do-koszyka" onclick="dodajDoKoszyka('Agregat prądotwórczy trójfazowy', 8912.78, 'produkt1.jpg', 'przemysl')">Dodaj do koszyka</button>
+                </div>
+                <!-- Dodaj więcej produktów promocyjnych -->
+            </div>
+        </section>
+
+        <section class="polecane">
+            <h2>Polecane produkty</h2>
+            <div class="produkty">
+                <div class="produkt">
+                    <img src="zdjecia/ogrod/produkt3.jpg" alt="Podkaszarka żyłkowa">
+                    <h3>Podkaszarka żyłkowa</h3>
+                    <p class="cena">Cena: 177,54 PLN</p>
+                    <button class="dodaj-do-koszyka" onclick="dodajDoKoszyka('Podkaszarka żyłkowa', 177.54, 'produkt3.jpg', 'ogrod')">Dodaj do koszyka</button>
+                </div>
+                <div class="produkt">
+                    <img src="zdjecia/elektronarzedzia/produkt4.jpg" alt="Szlifierka mimośrodowa Milwaukee">
+                    <h3>Szlifierka mimośrodowa Milwaukee</h3>
+                    <p class="cena">Cena: 931,86 PLN</p>
+                    <button class="dodaj-do-koszyka" onclick="dodajDoKoszyka('Szlifierka mimośrodowa Milwaukee', 931.86, 'produkt4.jpg', 'elektronarzedzia')">Dodaj do koszyka</button>
+                </div>
+                <!-- Dodaj więcej polecanych produktów -->
+            </div>
+        </section>
+
+        <section class="o-nas">
+            <h2>O nas</h2>
+            <p>Jesteśmy liderem w sprzedaży narzędzi i materiałów budowlanych. Oferujemy produkty najwyższej jakości od sprawdzonych producentów. Nasza oferta obejmuje szeroki asortyment, od elektronarzędzi po materiały wykończeniowe.</p>
+        </section>
+    </div>
     
     <footer class="footer">
         <div class="newsletter">
